@@ -1,0 +1,24 @@
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+link(rel='stylesheet', href='/stylesheets/style.css')
+div(class="container")
+form(method="post" action="/add", enctype="multipart/form-data")
+	| Team Number:
+	input(type="text" name="teamNumber")
+	br
+	| Abilities:
+	br
+	| 	Totes
+	input(type="checkbox" name="abilities" value="totes")
+	br
+	| 	Cans
+	input(type="checkbox" name="abilities" value="cans")
+	br
+	| 	Litter
+	input(type="checkbox" name="abilities" value="litter")
+	br
+	| Image: 
+	input(type='file', name='image', accept='image/png,capture=camera')
+	| Other: 
+	input(type="text" name="other")
+	br
+	input(class="btn btn-submit" type="submit" value="Submit")

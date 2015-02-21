@@ -1,0 +1,12 @@
+| Team Number: #{teamNumber}
+br
+br
+| Can pick up: 
+ul
+	each ability in abilities
+		li= ability
+| Picture:
+img(src='data:#{imageType};base64,#{imageData}')
+br
+br
+| Other: #{other}
