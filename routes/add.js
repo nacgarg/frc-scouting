@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var fs = require('fs');
-mongoose.connect(process.env.MONGO_URL);
+mongoose.createConnection(process.env.MONGO_URL);
 
 var Robot = require('../schemas/robot')
 /* GET add page. */
