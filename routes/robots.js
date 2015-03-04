@@ -1,19 +1,27 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-mongoose.createConnection(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL);
 
 var Robot = require('../schemas/robot')
 
 /* GET add page. */
 router.get('/', function(req, res) {
+    //res.send('Loading...')
+    var numbers = []
+    console.log('as')
     Robot.find({}, function(err, docs) {
-        console.log(err, docs)
-        res.render('robots', {
-            results: docs
+        console.log('asdf')
+        console.log(err)
+        console.log(docs)
+        numbers = docs.map(function(item) {
+            return item.teamNumber
         });
-    })
-
+        console.log('asdfsdf: ' + numbers)
+        res.render('robots', {
+            results: numbers
+        });
+    });
 });
 
 router.get('/:teamNumber', function(req, res) {
@@ -27,7 +35,10 @@ router.get('/:teamNumber', function(req, res) {
             other: docs[0].other,
             imageData: docs[0].img.data.toString('base64'),
             imageType: docs[0].img.contentType
-        })
+        });
+        if (err) {
+            res.send('error')
+        }
     })
 
 });
