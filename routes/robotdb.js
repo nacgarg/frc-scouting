@@ -11,12 +11,13 @@ Robot.find({}, function(err, docs) {
 })
 setInterval(function() {
     var that = this
-    console.log('refreshing db')
+    
     Robot.find({}, function(err, docs) {
         if (err) {
             console.log('error');
         }
         dbarray = docs;
+        console.log('refreshed db')
         setTimeout(function() {
             that._onTimeout()
         }, 5000)
