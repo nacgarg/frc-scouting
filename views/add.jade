@@ -7,33 +7,32 @@ h1
 	|Add a team
 hr
 form(method="post" action="/add", enctype="multipart/form-data")
-	h4
-		#form
-			| Team Number:&nbsp;
-			input(type="text" id="tm" name="teamNumber")
-			br
-			br
-			| Can pick up:
-			br
-			br
-			ul
-				| 	Totes&nbsp;
-				input(type="checkbox" name="abilities" value="totes")
-				br
-				| 	Cans&nbsp;
-				input(type="checkbox" name="abilities" value="cans")
-				br
-				| 	Litters&nbsp;
-				input(type="checkbox" name="abilities" value="litter")
-			| Image:&nbsp;
-			span.btn.btn-default.btn-file
-				| Browse
-				input(class="btn btn-default" type='file', name='image', accept='image/png,capture=camera')
-			br
-			br
-			| Other:
-			br 
-			textarea(rows="3" name="other")
-			br
-			br
-			input(class="btn btn-submit btn-lg" type="submit" value="Submit")
+	.form-group
+		label(for="tm")
+			|Team Number
+		input(class="form-control" type="text" id="tm" name="teamNumber")
+	label(for="chkbx") Can pick up
+	br
+	label#chkbx.checkbox-inline
+		input(type='checkbox', name='abilities', value='totes')
+		|  Totes
+	label.checkbox-inline
+		input(type='checkbox', name='abilities', value='cans')
+		|  Cans
+	label.checkbox-inline
+		input(type='checkbox', name='abilities', value='litters')
+		|  Litters
+	br
+	br 
+	label(for="fl") Image
+	br
+	span#fl.btn.btn-default.btn-file
+		| Browse
+		input(class="btn btn-default" type='file', name='image', accept='image/png,capture=camera')
+	br
+	br
+	.form-group
+		label(for="ot")
+			|Other
+		textarea(class="form-control" id="ot" name="other" rows="3")
+	input(class="btn btn-submit btn-lg" type="submit" value="Submit")

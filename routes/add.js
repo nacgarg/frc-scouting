@@ -12,18 +12,18 @@ router.get('/', function(req, res) {
 
 /* POST add page. */
 router.post('/', function(req, res) {
+    console.log('fssfds', req.body)
     fs.readFileSync('uploads/' + req.files.image.name)
     var robot = new Robot({
         teamNumber: req.body.teamNumber,
         abilities: req.body.abilities,
-        other: req.body.other,
+        other: req.body.other
     });
     robot.img.data = fs.readFileSync('uploads/' + req.files.image.name);
     robot.img.contentType = 'image/png';
     fs.unlinkSync('uploads/' + req.files.image.name)
     robot.save();
-    backURL = req.header('Referer') || '/';
-    res.redirect(backURL);
+    res.redirect('/robots/'+req.body.teamNumber);
 
 });
 

@@ -1,5 +1,12 @@
 extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+div(class="container")
+	block content
+		h1= title
+		hr
+		h4
+			a(href='/add')
+				| Add a robot
+			br
+			br
+			a(href='/robots')
+				| List of robots
