@@ -21,7 +21,18 @@ img {
     margin: 3px;
     padding:12px;
 }
-
+.fa-cog {
+    size: 230;
+}
+.btn-submit:hover {
+    background-color:#00F255;
+    -webkit-transition: background-color 0.2s; /* Safari */
+    transition: background-color 0.2s;
+}
+.btn-submit{
+    -webkit-transition: background-color 0.2s; /* Safari */
+    transition: background-color 0.2s;
+}
 .btn-file input[type=file] {
     position: absolute;
     top: 0;

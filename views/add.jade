@@ -2,6 +2,7 @@ doctype html
 meta(name='viewport', content='width=device-width, initial-scale=1.0')
 link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 link(rel='stylesheet', href='/stylesheets/style.css')
+link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 div(class="container")
 h1
 	|Add a team
@@ -27,7 +28,8 @@ form(method="post" action="/add", enctype="multipart/form-data")
 	label(for="fl") Image
 	br
 	span#fl.btn.btn-default.btn-file
-		| Browse
+		| Browse    &nbsp;
+		i.fa.fa-file-image-o
 		input(class="btn btn-default" type='file', name='image', accept='image/png,capture=camera')
 	br
 	br
@@ -35,4 +37,6 @@ form(method="post" action="/add", enctype="multipart/form-data")
 		label(for="ot")
 			|Other
 		textarea(class="form-control" id="ot" name="other" rows="3")
-	input(class="btn btn-submit btn-lg" type="submit" value="Submit")
+	input(onclick="document.getElementById('spinny').style.display='inline';" class="btn btn-submit btn-lg"  value="Submit" type="submit")
+	| &nbsp;
+	i.fa.fa-cog.fa-spin.fa-3x#spinny(style="display:none;position:relative;top:10px")
