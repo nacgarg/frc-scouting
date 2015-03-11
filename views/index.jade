@@ -1,12 +1,18 @@
 extends layout
 div(class="container")
+
 	block content
 		h1= title
 		hr
 		h4
-			a(href='/add')
-				| Add a robot
+			a(class="btn btn-default" href='/add')
+				i(class="fa fa-plus")
+				| &nbsp;&nbsp;Add a robot 
 			br
 			br
-			a(href='/robots')
-				| List of robots
+			a(class="btn btn-default" href='/robots')
+				i(class="fa fa-list")
+				| &nbsp;&nbsp;List of robots
+		h4
+			a(style="position:fixed;bottom:300"  href='http://www.botprovoking.org/')
+				|&#171; Back to Bot Provoking

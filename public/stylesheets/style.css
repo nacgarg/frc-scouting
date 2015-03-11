@@ -15,6 +15,13 @@ img {
     position: relative;
     overflow: hidden;
 }
+
+.btn {
+    font-size: 23;
+    margin: 3px;
+    padding:12px;
+}
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
